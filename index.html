@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surya Alfredo Simanjuntak | Data, Database & IT Support</title>
+<meta name="description" content="Lulusan Teknik Informatika (IPK 3,77) dengan pengalaman IT support, administrasi data, SQL/MySQL, dan penelitian Deep Learning yang telah dipublikasikan. Berdomisili di Medan.">
+<meta property="og:title" content="Surya Alfredo Simanjuntak | Portofolio">
+<meta property="og:description" content="Data, Database & IT Support. Lulusan Teknik Informatika, Universitas Prima Indonesia.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-size='15' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ESA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.dataset.theme=t}catch(e){d.dataset.theme='light'}})();
+</script>
+<style>
+:root{
+  --bg:#f4f7fc; --surface:#ffffff; --ink:#0f172a; --muted:#51607a; --line:#dfe6f1;
+  --accent:#2563eb; --accent-2:#0d9488; --soft:#e8f0ff; --glow:rgba(37,99,235,.16);
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 10px 28px rgba(15,23,42,.06);
+  --shadow-lg:0 2px 4px rgba(15,23,42,.05),0 18px 40px rgba(37,99,235,.14);
+  --c-data:#2563eb; --c-code:#0d9488; --c-it:#c2410c; --c-web:#7c3aed; --c-soft:#be185d;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+:root[data-theme="dark"]{
+  --bg:#080e1b; --surface:#101a2d; --ink:#e8eef9; --muted:#9aa9c0; --line:#203049;
+  --accent:#5b9bff; --accent-2:#2dd4bf; --soft:#13284c; --glow:rgba(91,155,255,.2);
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 18px 40px rgba(91,155,255,.16);
+  --c-data:#6ea8ff; --c-code:#2dd4bf; --c-it:#fb923c; --c-web:#a78bfa; --c-soft:#f472b6;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--font);-webkit-font-smoothing:antialiased}
+.theming,.theming *{transition:background-color .35s,color .35s,border-color .35s!important}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;z-index:50}
+.skip:focus{left:12px}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:30;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:0 50%}
+
+/* floating nav */
+header.bar{position:fixed;top:12px;left:0;right:0;z-index:20;pointer-events:none}
+.bar-in{pointer-events:auto;max-width:940px;margin:0 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;padding:0 10px 0 14px;border-radius:999px;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:var(--shadow)}
+@media (min-width:988px){.bar-in{margin:0 auto}}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.logo{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:12px;font-weight:800}
+.right{display:flex;align-items:center;gap:6px;min-width:0}
+nav{display:flex;gap:2px;font-size:14px;font-weight:600;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);padding:7px 13px;border-radius:999px;transition:background .2s,color .2s}
+nav a:hover{color:var(--ink);text-decoration:none}
+nav a.active{background:var(--soft);color:var(--accent)}
+.icon-btn{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .2s,transform .2s}
+.icon-btn:hover{border-color:var(--accent);transform:rotate(12deg)}
+.icon-btn svg{width:18px;height:18px}
+.sun{display:none}
+:root[data-theme="dark"] .sun{display:block}
+:root[data-theme="dark"] .moon{display:none}
+
+/* hero */
+.hero-bg{position:relative;overflow:hidden;background:radial-gradient(700px 360px at 90% -5%,var(--glow),transparent 70%),radial-gradient(480px 280px at 0% 95%,color-mix(in srgb,var(--accent-2) 12%,transparent),transparent 70%)}
+.hero-bg::before{content:"";position:absolute;inset:0;background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1.4px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000 0,transparent 75%);mask-image:linear-gradient(180deg,#000 0,transparent 75%);opacity:.5}
+.hero{position:relative;padding:130px 0 44px;display:grid;grid-template-columns:230px 1fr;gap:52px;align-items:center}
+.photo-wrap{position:relative;width:230px}
+.photo-wrap::before{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.photo-wrap::after{content:"";position:absolute;inset:-10px 10px 10px -10px;border-radius:20px;border:2px dashed color-mix(in srgb,var(--accent) 45%,transparent)}
+.photo{position:relative;z-index:1;width:230px;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;border:4px solid var(--surface);box-shadow:var(--shadow-lg)}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);margin-bottom:18px}
+.status i{position:relative;width:8px;height:8px;border-radius:50%;background:#16a34a}
+.status i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #16a34a;animation:ping 2s var(--ease) infinite}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.06;margin:0 0 12px;font-weight:800;letter-spacing:-.035em}
+.role{font-size:clamp(17px,2.4vw,21px);font-weight:600;margin:0 0 16px;color:var(--muted)}
+.rotor{display:inline-block;position:relative;font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .35s,transform .35s var(--ease)}
+.rotor.out{opacity:0;transform:translateY(8px)}
+.lead{max-width:58ch;color:var(--muted);margin:0 0 26px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;font:600 15px var(--font);border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:transform .2s var(--ease),border-color .2s,box-shadow .2s,filter .2s}
+.btn:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn:active{transform:translateY(0)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 20px var(--glow)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn svg{width:17px;height:17px;flex:none}
+
+/* load-in sequence */
+.js .load{opacity:0;transform:translateY(20px);animation:rise .8s var(--ease) forwards;animation-delay:calc(var(--i,0)*110ms + 100ms)}
+.js .photo-wrap.load{transform:translateY(20px) scale(.96)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* stats */
+.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 64px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);transition:transform .25s var(--ease)}
+.stat:hover{transform:translateY(-3px)}
+.stat strong{display:block;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.stat:nth-child(2) strong{color:var(--accent-2)}
+.stat:nth-child(3) strong{color:var(--c-web)}
+.stat:nth-child(4) strong{color:var(--c-it)}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:44px 0 52px}
+h2{font-size:clamp(24px,3.4vw,30px);margin:0 0 8px;font-weight:800;letter-spacing:-.025em}
+.section-note{color:var(--muted);margin:0 0 30px;max-width:60ch}
+h3{font-size:17px;margin:0;font-weight:700}
+p{margin:0 0 12px}
+ul{margin:10px 0 0;padding-left:18px}
+li{margin-bottom:6px}
+li::marker{color:var(--accent)}
+.sub{color:var(--muted);font-size:15px}
+
+/* scroll reveal */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+.js .rv.in{opacity:1;transform:none}
+
+/* offer cards */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.offer .card{padding:24px}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;color:var(--c);background:color-mix(in srgb,var(--c) 13%,var(--surface))}
+.ico svg{width:22px;height:22px}
+.offer p{color:var(--muted);font-size:15px;margin:6px 0 0}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:var(--shadow-lg)}
+
+/* timeline */
+.timeline{position:relative;margin-left:8px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline::after{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent-2));transform:scaleY(0);transform-origin:top;transition:transform 1.4s var(--ease)}
+.timeline.in::after{transform:scaleY(1)}
+.entry{position:relative;margin-bottom:22px}
+.entry:last-child{margin-bottom:0}
+.entry::before{content:"";position:absolute;left:-43px;top:26px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent);box-shadow:0 0 0 5px var(--glow)}
+.when{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:var(--soft);padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.entry ul{margin-top:12px}
+
+/* projects */
+.projects{display:grid;gap:22px}
+.project{position:relative;overflow:hidden;padding:28px}
+.project::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.project header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0;padding:16px;border-radius:14px;background:var(--bg);border:1px dashed var(--line)}
+.flow .col{display:grid;gap:6px}
+.flow .pill{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);white-space:nowrap}
+.flow .arrow{color:var(--accent);font-weight:700;font-size:18px}
+.flow .node{font-size:13px;font-weight:700;padding:9px 14px;border-radius:10px;background:var(--soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.flow .node.out{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
+.meters{display:grid;gap:14px;margin:18px 0}
+.meter-top{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:6px}
+.meter-top b{color:var(--accent);font-variant-numeric:tabular-nums}
+.track{height:10px;border-radius:999px;background:var(--soft);overflow:hidden}
+.fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.4s var(--ease) .2s}
+.in .fill{width:var(--v)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{margin:0;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+
+/* skills */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tab{font:600 14px var(--font);padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s}
+.tab:hover{color:var(--ink);border-color:var(--accent)}
+.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.skill-card{transition:opacity .3s,transform .3s var(--ease)}
+.skill-card.hide{display:none}
+.skill-card h3{font-size:15px;margin-bottom:14px;color:var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13.5px;font-weight:600;padding:5px 13px;border-radius:999px;color:var(--c);background:color-mix(in srgb,var(--c) 11%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 26%,transparent);transition:transform .2s var(--ease),background .2s}
+.chip:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--c) 20%,var(--surface))}
+.c-data{--c:var(--c-data)} .c-code{--c:var(--c-code)} .c-it{--c:var(--c-it)} .c-web{--c:var(--c-web)} .c-soft{--c:var(--c-soft)}
+.skill-card.wide{grid-column:1/-1}
+
+/* education */
+.edu{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.cert{list-style:none;padding:0;margin:14px 0 0}
+.cert li{display:flex;gap:12px;align-items:flex-start;font-size:15px;margin-bottom:12px}
+.cert li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.cert small{display:block;color:var(--muted);font-size:13px}
+
+/* contact */
+.contact-card{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,var(--accent-2)));color:#fff;border-radius:24px;padding:44px;box-shadow:var(--shadow-lg)}
+.contact-card::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.1)}
+.contact-card>*{position:relative;z-index:1}
+.contact-card h2{color:#fff;margin-bottom:12px}
+.contact-card p{color:rgba(255,255,255,.92);max-width:56ch}
+.contact-card a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.contact-card a.btn{text-decoration:none}
+.contact-list{margin:20px 0 26px;display:grid;gap:6px}
+.contact-card .btn{background:#fff;color:#1e3a8a;border-color:#fff}
+.contact-card .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
+
+/* back to top */
+#top-btn{position:fixed;right:20px;bottom:20px;z-index:20;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s var(--ease);box-shadow:var(--shadow)}
+#top-btn.show{opacity:1;transform:none;pointer-events:auto}
+
+@media (max-width:800px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:110px}
+  .photo-wrap,.photo{width:170px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .offer,.skill-grid,.edu{grid-template-columns:1fr}
+  .contact-card{padding:30px 24px}
+  .brand .name{display:none}
+  .flow{flex-direction:column;align-items:flex-start}
+  .flow .arrow{transform:rotate(90deg)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .load,.js .rv{opacity:1;transform:none}
+  .fill{width:var(--v)}.timeline::after{transform:none}
+}
+@media print{
+  header.bar,#progress,#top-btn,.actions,.tabs,.theme-note{display:none!important}
+  .js .rv,.js .load{opacity:1!important;transform:none!important}
+  .fill{width:var(--v)!important}.timeline::after{transform:none}
+  body{background:#fff}.hero{padding-top:20px}.card,.stat{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#experience">Lewati ke konten</a>
+<div id="progress"></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top"><span class="logo">SA</span><span class="name">Surya Alfredo</span></a>
+    <div class="right">
+      <nav aria-label="Navigasi bagian">
+        <a href="#tentang">Tentang</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#projects">Proyek</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#education">Pendidikan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap" title="Ganti tema">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="hero-bg" id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div class="photo-wrap load" style="--i:0">
+        <img class="photo" src="foto-surya.jpg" alt="Foto Surya Alfredo Simanjuntak" width="230" height="288">
+      </div>
+      <div>
+        <span class="status load" style="--i:1"><i></i>Terbuka untuk posisi entry-level &middot; Medan</span>
+        <h1 class="load" style="--i:2">Surya Alfredo Simanjuntak</h1>
+        <p class="role load" style="--i:3">Saya menjaga <span class="rotor" id="rotor">data tetap akurat</span></p>
+        <p class="lead load" style="--i:4">Lulusan Teknik Informatika dengan pengalaman di IT support, jaringan, serta administrasi data dan aset. Saya membangun alat yang berguna dengan SQL, MySQL, PHP, dan Python.</p>
+        <div class="actions load" style="--i:5">
+          <a class="btn primary" href="cv-surya-alfredo-simanjuntak.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>Unduh CV</a>
+          <a class="btn" href="https://linkedin.com/in/SuryaAlfredoSimanjuntak" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#contact">Hubungi saya</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat load" style="--i:6"><strong data-count="3.77" data-dec="2">3,77</strong><span>IPK dari 4,00</span></div>
+      <div class="stat load" style="--i:7"><strong data-count="2">2</strong><span>Magang diselesaikan</span></div>
+      <div class="stat load" style="--i:8"><strong data-count="1">1</strong><span>Publikasi jurnal</span></div>
+      <div class="stat load" style="--i:9"><strong>C1</strong><span>Bahasa Inggris (CEFR)</span></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap" id="main">
+
+  <section id="tentang">
+    <h2 class="rv">Yang bisa saya bantu</h2>
+    <p class="section-note rv" style="--d:1">Tiga hal yang sudah saya kerjakan langsung selama magang dan kuliah.</p>
+    <div class="offer">
+      <div class="card rv c-data" style="--d:1">
+        <div class="ico" style="--c:var(--c-data)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <h3>Data yang rapi dan akurat</h3>
+        <p>Memverifikasi, memperbarui, dan mengarsipkan data aset serta inventaris secara digital.</p>
+      </div>
+      <div class="card rv" style="--d:2">
+        <div class="ico" style="--c:var(--c-it)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Dukungan IT sehari-hari</h3>
+        <p>Menangani masalah perangkat keras, perangkat lunak, dan jaringan LAN/WAN, serta perawatan rutin.</p>
+      </div>
+      <div class="card rv" style="--d:3">
+        <div class="ico" style="--c:var(--c-code)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div>
+        <h3>Membangun alat yang berguna</h3>
+        <p>Sistem inventaris PHP/MySQL dan penelitian Deep Learning yang sudah dipublikasikan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="rv">Pengalaman</h2>
+    <p class="section-note rv" style="--d:1">Dua magang di instansi pemerintah Kota Medan.</p>
+    <div class="timeline" id="timeline">
+      <div class="entry card rv">
+        <span class="when">Apr 2025 – Sep 2025</span>
+        <h3>Magang IT Support &amp; Teknisi Jaringan</h3>
+        <div class="sub">Dinas Komunikasi dan Informatika Kota Medan</div>
+        <ul>
+          <li>Menangani masalah perangkat keras, perangkat lunak, sistem operasi, dan konektivitas LAN/WAN internal pada komputer staf.</li>
+          <li>Melakukan perawatan preventif serta instalasi dan konfigurasi perangkat lunak operasional untuk layanan IT harian.</li>
+          <li>Mencatat aktivitas dukungan dan ikut mengembangkan sistem inventaris berbasis web dengan PHP dan MySQL.</li>
+        </ul>
+      </div>
+      <div class="entry card rv" style="--d:1">
+        <span class="when">Sep 2024 – Jan 2025</span>
+        <h3>Magang Administrasi Data</h3>
+        <div class="sub">Sekretariat DPRD Kota Medan</div>
+        <ul>
+          <li>Memverifikasi dan memperbarui data aset dan inventaris berdasarkan dokumen KIR di seluruh ruang Sekretariat.</li>
+          <li>Menginput, mengelola, dan mengarsipkan data administrasi secara digital dengan menjaga akurasi dan validitasnya.</li>
+          <li>Menyusun data inventaris agar lebih mudah dicari, dilaporkan, dan ditindaklanjuti.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="rv">Proyek &amp; Publikasi</h2>
+    <p class="section-note rv" style="--d:1">Satu penelitian yang dipublikasikan dan satu sistem yang dipakai di tempat magang.</p>
+    <div class="projects">
+      <article class="card project rv">
+        <header>
+          <h3>Klasifikasi Pneumonia dari Citra Rontgen Dada</h3>
+          <span class="sub">Skripsi &middot; Feb – Jun 2026</span>
+        </header>
+        <p>Ensemble tiga model CNN yang digabungkan dengan stacking Logistic Regression, dibangun dengan PyTorch dan Scikit-Learn, dilatih pada 5.856 citra rontgen dada dari Kaggle.</p>
+
+        <div class="flow" aria-label="Alur model">
+          <div class="col"><span class="pill">DenseNet161</span><span class="pill">DenseNet201</span><span class="pill">ConvNeXt-Tiny</span></div>
+          <span class="arrow">&rarr;</span>
+          <span class="node">Stacking Logistic Regression</span>
+          <span class="arrow">&rarr;</span>
+          <span class="node out">Hasil klasifikasi</span>
+        </div>
+
+        <div class="meters">
+          <div>
+            <div class="meter-top"><span>Akurasi</span><b>84,86%</b></div>
+            <div class="track"><div class="fill" style="--v:84.86%"></div></div>
+          </div>
+          <div>
+            <div class="meter-top"><span>Recall</span><b>90,72%</b></div>
+            <div class="track"><div class="fill" style="--v:90.72%"></div></div>
+          </div>
+        </div>
+
+        <p>Ditulis bersama tim dan terbit di Indonesian Journal of Machine Learning and Computer Science (MALCOM), Vol. 6 No. 3, 2026. <a href="https://journal.irpi.or.id/index.php/malcom/article/view/2715" target="_blank" rel="noopener">Baca publikasinya</a></p>
+        <ul class="tags"><li>Python</li><li>PyTorch</li><li>Scikit-Learn</li><li>Deep Learning</li><li>Computer Vision</li></ul>
+      </article>
+
+      <article class="card project rv">
+        <header>
+          <h3>Sistem Informasi Manajemen Inventaris</h3>
+          <span class="sub">Proyek magang &middot; Apr – Sep 2025</span>
+        </header>
+        <p>Sistem inventaris berbasis web untuk Dinas Kominfo Kota Medan dengan fungsi tambah, lihat, ubah, dan hapus data (CRUD), untuk mendukung pencatatan dan pelaporan yang lebih terstruktur.</p>
+        <ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML/CSS</li><li>CRUD</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="rv">Keahlian</h2>
+    <p class="section-note rv" style="--d:1">Pilih kategori untuk menyaring.</p>
+    <div class="tabs rv" role="group" aria-label="Saring keahlian">
+      <button class="tab" type="button" data-f="all" aria-pressed="true">Semua</button>
+      <button class="tab" type="button" data-f="data" aria-pressed="false">Data</button>
+      <button class="tab" type="button" data-f="code" aria-pressed="false">Pemrograman</button>
+      <button class="tab" type="button" data-f="it" aria-pressed="false">IT &amp; Jaringan</button>
+      <button class="tab" type="button" data-f="web" aria-pressed="false">Web</button>
+    </div>
+    <div class="skill-grid">
+      <div class="card skill-card c-data rv" data-k="data">
+        <h3>Data &amp; Database</h3>
+        <div class="chips"><span class="chip">Microsoft Excel</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">Analisis Data</span><span class="chip">Manajemen Database</span></div>
+      </div>
+      <div class="card skill-card c-code rv" data-k="code" style="--d:1">
+        <h3>Pemrograman</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">JavaScript</span></div>
+      </div>
+      <div class="card skill-card c-it rv" data-k="it" style="--d:1">
+        <h3>IT Support &amp; Jaringan</h3>
+        <div class="chips"><span class="chip">Troubleshooting Hardware/Software</span><span class="chip">Windows</span><span class="chip">LAN/WAN</span><span class="chip">TCP/IP</span><span class="chip">Pemeliharaan Sistem</span></div>
+      </div>
+      <div class="card skill-card c-web rv" data-k="web" style="--d:2">
+        <h3>Web</h3>
+        <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap 5</span><span class="chip">Desain Responsif</span><span class="chip">React.js dasar</span></div>
+      </div>
+      <div class="card skill-card c-soft wide rv" data-k="all" style="--d:2">
+        <h3>Cara kerja</h3>
+        <div class="chips"><span class="chip">Berpikir Analitis</span><span class="chip">Pemecahan Masalah</span><span class="chip">Teliti</span><span class="chip">Kerja Sama Tim</span><span class="chip">Mudah Beradaptasi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="rv">Pendidikan &amp; Sertifikasi</h2>
+    <p class="section-note rv" style="--d:1">&nbsp;</p>
+    <div class="edu">
+      <div class="card rv">
+        <span class="when">Sep 2022 – Jul 2026</span>
+        <h3>S1 Teknik Informatika</h3>
+        <div class="sub">Universitas Prima Indonesia</div>
+        <p style="margin-top:14px">IPK 3,77 / 4,00. Fokus pada Sistem Informasi, Kecerdasan Buatan, dan Pengembangan Front-End.</p>
+        <p class="sub" style="margin:0">Bahasa: Indonesia (profesional), Inggris (CEFR C1)</p>
+      </div>
+      <div class="card rv" style="--d:1">
+        <h3>Sertifikasi</h3>
+        <ul class="cert">
+          <li><span>Microsoft Azure Data Fundamentals<small>Microsoft, 2026</small></span></li>
+          <li><span>English Language Proficiency, CEFR C1<small>Universitas Prima Indonesia / Altissia, 2025</small></span></li>
+          <li><span>BNSP KKNI Level 4, Kewirausahaan Industri<small>2026</small></span></li>
+          <li><span>Web Marketing for Full Stack Engineer<small>Luarsekolah, 2024</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-card rv">
+      <h2>Mari berdiskusi</h2>
+      <p>Saya terbuka untuk posisi entry-level di bidang Data, IT Support, Database, MIS, dan Operasional Teknologi. Dengan senang hati saya jelaskan bagaimana saya bisa membantu tim Anda.</p>
+      <div class="contact-list">
+        <div>Email: <a href="mailto:suryauyak123@gmail.com">suryauyak123@gmail.com</a></div>
+        <div>Telepon / WhatsApp: <a href="tel:+6282368204594">0823 6820 4594</a></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/SuryaAlfredoSimanjuntak" target="_blank" rel="noopener">linkedin.com/in/SuryaAlfredoSimanjuntak</a></div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/6282368204594?text=Halo%20Surya%2C%20saya%20melihat%20portofolio%20Anda." target="_blank" rel="noopener">Chat WhatsApp</a>
+        <button class="btn ghost" id="copyBtn" type="button">Salin email</button>
+        <a class="btn ghost" href="cv-surya-alfredo-simanjuntak.pdf" download>Unduh CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 2026 Surya Alfredo Simanjuntak</footer>
+
+<button class="icon-btn" id="top-btn" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+var d=document, root=d.documentElement;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// tema
+d.getElementById('themeBtn').addEventListener('click',function(){
+  var t=root.dataset.theme==='dark'?'light':'dark';
+  root.classList.add('theming');root.dataset.theme=t;
+  try{localStorage.setItem('theme',t)}catch(e){}
+  setTimeout(function(){root.classList.remove('theming')},450);
+});
+
+// kata yang berganti di hero
+var words=['data tetap akurat','database tetap tertata','sistem IT tetap lancar'],wi=0,rotor=d.getElementById('rotor');
+if(!reduce){setInterval(function(){
+  rotor.classList.add('out');
+  setTimeout(function(){wi=(wi+1)%words.length;rotor.textContent=words[wi];rotor.classList.remove('out')},350);
+},3200)}
+
+// hitung naik pada angka
+function count(el){
+  var to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,t0=null,dur=1200;
+  function fmt(v){return v.toFixed(dec).replace('.',',')}
+  if(reduce){el.textContent=fmt(to);return}
+  el.textContent=fmt(0);
+  (function step(ts){t0=t0||ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(to*e);if(p<1)requestAnimationFrame(step)})(performance.now());
+}
+setTimeout(function(){[].forEach.call(d.querySelectorAll('[data-count]'),count)},700);
+
+// munculkan saat di-scroll
+var rv=[].slice.call(d.querySelectorAll('.rv,.timeline'));
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  rv.forEach(function(el){io.observe(el)});
+}else{rv.forEach(function(el){el.classList.add('in')})}
+
+// menu aktif
+var links=[].slice.call(d.querySelectorAll('nav a'));
+if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+  links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)so.observe(s)});
+}
+
+// progres scroll + tombol ke atas
+var bar=d.getElementById('progress'),topBtn=d.getElementById('top-btn'),tick=false;
+function onScroll(){
+  var h=root.scrollHeight-innerHeight,p=h>0?scrollY/h:0;
+  bar.style.transform='scaleX('+p+')';
+  topBtn.classList.toggle('show',scrollY>600);
+  tick=false;
+}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+onScroll();
+topBtn.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
+
+// saring keahlian
+var tabs=[].slice.call(d.querySelectorAll('.tab')),cards=[].slice.call(d.querySelectorAll('.skill-card'));
+tabs.forEach(function(b){b.addEventListener('click',function(){
+  tabs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  cards.forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.k!==b.dataset.f&&c.dataset.k!=='all'?true:(b.dataset.f!=='all'&&c.dataset.k==='all'))});
+})});
+
+// salin email
+var cb=d.getElementById('copyBtn'),mail='suryauyak123@gmail.com';
+cb.addEventListener('click',function(){
+  var ok=function(){cb.textContent='Tersalin';setTimeout(function(){cb.textContent='Salin email'},1800)};
+  if(navigator.clipboard){navigator.clipboard.writeText(mail).then(ok,function(){location.href='mailto:'+mail})}else{location.href='mailto:'+mail}
+});
+})();
+</script>
+</body>
+</html>

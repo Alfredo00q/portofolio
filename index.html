@@ -402,7 +402,7 @@ dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;curs
           <div class="shot-tabs" id="shotTabs" role="tablist" aria-label="Tampilan SIMASET"></div>
           <div class="browser">
             <div class="browser-bar"><i></i><i></i><i></i><span>inventaris-app.onrender.com</span></div>
-            <button class="browser-view" id="shotView" type="button" aria-label="Perbesar gambar"><img id="shotImg" src="img/simaset-dashboard.webp" alt="Dashboard SIMASET dengan kartu ringkasan dan grafik" width="1600" height="804" loading="lazy"></button>
+            <button class="browser-view" id="shotView" type="button" aria-label="Perbesar gambar"><img id="shotImg" src="simaset-dashboard.webp" alt="Dashboard SIMASET dengan kartu ringkasan dan grafik" width="1600" height="804" loading="lazy"></button>
           </div>
           <p class="shot-cap" id="shotCap"></p>
         </div>
@@ -579,13 +579,14 @@ cb.addEventListener('click',function(){
   var tabs=document.getElementById('shotTabs'),img=document.getElementById('shotImg'),cap=document.getElementById('shotCap'),view=document.getElementById('shotView'),lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
   if(!tabs||!img)return;
   var cur=0,btns=[];
-  function src(i){return 'img/simaset-'+shots[i].k+'.webp'}
+  function src(i){return 'simaset-'+shots[i].k+'.webp'}
+  function setImg(i){img.onerror=function(){img.onerror=null;img.src='img/simaset-'+shots[i].k+'.webp'};img.src=src(i)}
   function show(i,first){
     cur=i;btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1});
     cap.textContent=shots[i].c;
-    if(first){img.src=src(i);img.alt=shots[i].a;return}
+    if(first){setImg(i);img.alt=shots[i].a;return}
     img.classList.add('fade');
-    setTimeout(function(){img.src=src(i);img.alt=shots[i].a;img.classList.remove('fade')},180);
+    setTimeout(function(){setImg(i);img.alt=shots[i].a;img.classList.remove('fade')},180);
   }
   shots.forEach(function(s,i){
     var b=document.createElement('button');b.type='button';b.className='shot-tab';b.setAttribute('role','tab');b.textContent=s.t;

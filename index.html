@@ -224,6 +224,29 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
   .fill{width:var(--v)!important}.timeline::after{transform:none}
   body{background:#fff}.hero{padding-top:20px}.card,.stat{box-shadow:none}
 }
+
+/* galeri SIMASET */
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 22px;padding:0;margin:16px 0 0;list-style:none}
+.feat li{position:relative;margin:0;padding-left:26px;font-size:14.5px}
+.feat li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/10px no-repeat}
+.shots{margin:22px 0 0}
+.shot-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.shot-tab{font:600 13.5px var(--font);padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s}
+.shot-tab:hover{color:var(--ink);border-color:var(--accent)}
+.shot-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.browser{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b1220;box-shadow:var(--shadow-lg)}
+.browser-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#111a2c;border-bottom:1px solid #203049}
+.browser-bar i{width:10px;height:10px;border-radius:50%;background:#334155}
+.browser-bar span{margin-left:10px;max-width:340px;flex:1;font-size:12px;color:#9aa9c0;background:#0b1220;border-radius:999px;padding:3px 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser-view{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.browser-view img{display:block;width:100%;height:auto;aspect-ratio:1600/804;transition:opacity .25s}
+.browser-view img.fade{opacity:0}
+.shot-cap{margin:12px 2px 0;font-size:14px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0}
+dialog.lightbox{border:0;padding:0;background:transparent;width:94vw;max-width:1400px;overflow:visible}
+dialog.lightbox::backdrop{background:rgba(2,8,23,.85)}
+dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;cursor:zoom-out}
+@media (max-width:800px){.feat{grid-template-columns:1fr}.browser-bar span{max-width:none}}
 </style>
 </head>
 <body>
@@ -332,7 +355,7 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
 
   <section id="projects">
     <h2 class="rv">Proyek &amp; Publikasi</h2>
-    <p class="section-note rv" style="--d:1">Satu penelitian yang dipublikasikan dan satu sistem yang dipakai di tempat magang.</p>
+    <p class="section-note rv" style="--d:1">Satu penelitian yang dipublikasikan dan satu sistem inventaris, dari proyek magang sampai versi terbarunya yang sudah online.</p>
     <div class="projects">
       <article class="card project rv">
         <header>
@@ -363,14 +386,31 @@ footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
         <p>Ditulis bersama tim dan terbit di Indonesian Journal of Machine Learning and Computer Science (MALCOM), Vol. 6 No. 3, 2026. <a href="https://journal.irpi.or.id/index.php/malcom/article/view/2715" target="_blank" rel="noopener">Baca publikasinya</a></p>
         <ul class="tags"><li>Python</li><li>PyTorch</li><li>Scikit-Learn</li><li>Deep Learning</li><li>Computer Vision</li></ul>
       </article>
-
-      <article class="card project rv">
+<article class="card project rv" id="inventaris">
         <header>
           <h3>Sistem Informasi Manajemen Inventaris</h3>
           <span class="sub">Proyek magang &middot; Apr – Sep 2025</span>
         </header>
-        <p>Sistem inventaris berbasis web untuk Dinas Kominfo Kota Medan dengan fungsi tambah, lihat, ubah, dan hapus data (CRUD), untuk mendukung pencatatan dan pelaporan yang lebih terstruktur.</p>
-        <ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML/CSS</li><li>CRUD</li></ul>
+        <p>Sistem inventaris berbasis web untuk Dinas Kominfo Kota Medan dengan fungsi tambah, lihat, ubah, dan hapus data (CRUD), untuk pencatatan dan pelaporan yang lebih terstruktur. Versi awalnya dibangun dengan PHP dan MySQL. Pada Okt 2026 saya membangun ulang konsepnya sebagai <b>SIMASET</b> dengan Node.js, Express, dan MySQL. Versi terbaru inilah yang tampil di bawah dan sudah online.</p>
+        <ul class="feat">
+          <li>Dashboard ringkasan dan grafik peminjaman</li>
+          <li>Data aset: cari, saring, dan ekspor CSV</li>
+          <li>Peminjaman dan pengembalian dengan penanda terlambat</li>
+          <li>Log aktivitas dan peran admin/staf</li>
+        </ul>
+        <div class="shots">
+          <div class="shot-tabs" id="shotTabs" role="tablist" aria-label="Tampilan SIMASET"></div>
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>inventaris-app.onrender.com</span></div>
+            <button class="browser-view" id="shotView" type="button" aria-label="Perbesar gambar"><img id="shotImg" src="img/simaset-dashboard.webp" alt="Dashboard SIMASET dengan kartu ringkasan dan grafik" width="1600" height="804" loading="lazy"></button>
+          </div>
+          <p class="shot-cap" id="shotCap"></p>
+        </div>
+        <div class="actions" style="margin-top:18px">
+          <a class="btn primary" href="https://inventaris-app.onrender.com" target="_blank" rel="noopener">Lihat demo versi terbaru</a>
+        </div>
+        <p class="note">Demo memerlukan login, jadi hubungi saya untuk akun demo. Server gratis bisa butuh sekitar satu menit untuk aktif saat pertama dibuka.</p>
+        <ul class="tags"><li>PHP</li><li>MySQL</li><li>CRUD</li><li>Node.js</li><li>Express</li><li>Bootstrap 5</li><li>Chart.js</li></ul>
       </article>
     </div>
   </section>
@@ -525,6 +565,42 @@ cb.addEventListener('click',function(){
   var ok=function(){cb.textContent='Tersalin';setTimeout(function(){cb.textContent='Salin email'},1800)};
   if(navigator.clipboard){navigator.clipboard.writeText(mail).then(ok,function(){location.href='mailto:'+mail})}else{location.href='mailto:'+mail}
 });
+})();
+</script>
+<dialog class="lightbox" id="lightbox" aria-label="Tampilan diperbesar"><img id="lbImg" alt=""></dialog>
+<script>
+(function(){
+  var shots=[
+    {k:'dashboard',t:'Dashboard',c:'Ringkasan aset, grafik peminjaman 6 bulan, dan komposisi kategori dalam satu layar.',a:'Dashboard SIMASET dengan kartu ringkasan dan grafik'},
+    {k:'aset',t:'Data Aset',c:'Daftar aset dengan pencarian, saringan kategori, status, kondisi, dan ekspor CSV.',a:'Halaman Data Aset SIMASET dengan tabel dan filter'},
+    {k:'peminjaman',t:'Peminjaman',c:'Pencatatan peminjaman dan pengembalian, lengkap dengan status dan batas waktu.',a:'Halaman Peminjaman SIMASET'},
+    {k:'log',t:'Log Aktivitas',c:'Jejak aktivitas pengguna (login, tambah aset, peminjaman) khusus untuk admin.',a:'Halaman Log Aktivitas SIMASET'}
+  ];
+  var tabs=document.getElementById('shotTabs'),img=document.getElementById('shotImg'),cap=document.getElementById('shotCap'),view=document.getElementById('shotView'),lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+  if(!tabs||!img)return;
+  var cur=0,btns=[];
+  function src(i){return 'img/simaset-'+shots[i].k+'.webp'}
+  function show(i,first){
+    cur=i;btns.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1});
+    cap.textContent=shots[i].c;
+    if(first){img.src=src(i);img.alt=shots[i].a;return}
+    img.classList.add('fade');
+    setTimeout(function(){img.src=src(i);img.alt=shots[i].a;img.classList.remove('fade')},180);
+  }
+  shots.forEach(function(s,i){
+    var b=document.createElement('button');b.type='button';b.className='shot-tab';b.setAttribute('role','tab');b.textContent=s.t;
+    b.addEventListener('click',function(){show(i)});
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=(cur+(e.key==='ArrowRight'?1:shots.length-1))%shots.length;show(n);btns[n].focus()}
+    });
+    tabs.appendChild(b);btns.push(b);
+    var pre=new Image();pre.src=src(i);
+  });
+  show(0,true);
+  view.addEventListener('click',function(){
+    if(lb&&lb.showModal){lbImg.src=img.src;lbImg.alt=img.alt;lb.showModal()}else{window.open(img.src,'_blank')}
+  });
+  if(lb)lb.addEventListener('click',function(){lb.close()});
 })();
 </script>
 </body>

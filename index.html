@@ -247,6 +247,14 @@ dialog.lightbox{border:0;padding:0;background:transparent;width:94vw;max-width:1
 dialog.lightbox::backdrop{background:rgba(2,8,23,.85)}
 dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;cursor:zoom-out}
 @media (max-width:800px){.feat{grid-template-columns:1fr}.browser-bar span{max-width:none}}
+
+/* foto magang */
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.ph{position:relative;display:block;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:var(--soft);aspect-ratio:1/1}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
+.ph:hover img{transform:scale(1.06)}
+.ph span{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);font:600 11.5px var(--font);color:#fff;background:rgba(11,27,58,.74);padding:3px 10px;border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:800px){.photos{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -328,7 +336,7 @@ dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;curs
 
   <section id="experience">
     <h2 class="rv">Pengalaman</h2>
-    <p class="section-note rv" style="--d:1">Dua magang di instansi pemerintah Kota Medan.</p>
+    <p class="section-note rv" style="--d:1">Dua magang di instansi pemerintah Kota Medan. Klik foto untuk memperbesar.</p>
     <div class="timeline" id="timeline">
       <div class="entry card rv">
         <span class="when">Apr 2025 – Sep 2025</span>
@@ -339,6 +347,12 @@ dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;curs
           <li>Melakukan perawatan preventif serta instalasi dan konfigurasi perangkat lunak operasional untuk layanan IT harian.</li>
           <li>Mencatat aktivitas dukungan dan ikut mengembangkan sistem inventaris berbasis web dengan PHP dan MySQL.</li>
         </ul>
+        <div class="photos">
+          <button class="ph" type="button" data-full="magang-dk1.webp" aria-label="Perbesar foto: Perawatan perangkat"><img src="magang-dk1-t.webp" alt="Merawat perangkat keras komputer di Diskominfo Kota Medan" width="700" height="700" loading="lazy"><span>Perawatan perangkat</span></button>
+          <button class="ph" type="button" data-full="magang-dk2.webp" aria-label="Perbesar foto: Pemeriksaan perangkat"><img src="magang-dk2-t.webp" alt="Memeriksa perangkat komputer di Diskominfo Kota Medan" width="700" height="700" loading="lazy"><span>Pemeriksaan perangkat</span></button>
+          <button class="ph" type="button" data-full="magang-dk3.webp" aria-label="Perbesar foto: Koordinasi jaringan"><img src="magang-dk3-t.webp" alt="Koordinasi pekerjaan jaringan di Diskominfo Kota Medan" width="700" height="700" loading="lazy"><span>Koordinasi jaringan</span></button>
+          <button class="ph" type="button" data-full="magang-dk4.webp" aria-label="Perbesar foto: Pemeriksaan kabel"><img src="magang-dk4-t.webp" alt="Memeriksa kabel jaringan di Diskominfo Kota Medan" width="700" height="700" loading="lazy"><span>Pemeriksaan kabel</span></button>
+        </div>
       </div>
       <div class="entry card rv" style="--d:1">
         <span class="when">Sep 2024 – Jan 2025</span>
@@ -349,6 +363,12 @@ dialog.lightbox img{display:block;width:100%;height:auto;border-radius:12px;curs
           <li>Menginput, mengelola, dan mengarsipkan data administrasi secara digital dengan menjaga akurasi dan validitasnya.</li>
           <li>Menyusun data inventaris agar lebih mudah dicari, dilaporkan, dan ditindaklanjuti.</li>
         </ul>
+        <div class="photos">
+          <button class="ph" type="button" data-full="magang-dprd4.webp" aria-label="Perbesar foto: Dokumen inventaris"><img src="magang-dprd4-t.webp" alt="Memasang dokumen inventaris di Sekretariat DPRD Kota Medan" width="700" height="700" loading="lazy"><span>Dokumen inventaris</span></button>
+          <button class="ph" type="button" data-full="magang-dprd1.webp" aria-label="Perbesar foto: Dokumentasi rapat"><img src="magang-dprd1-t.webp" alt="Rapat di lingkungan Sekretariat DPRD Kota Medan" width="700" height="700" loading="lazy"><span>Dokumentasi rapat</span></button>
+          <button class="ph" type="button" data-full="magang-dprd2.webp" aria-label="Perbesar foto: Mesin absensi"><img src="magang-dprd2-t.webp" alt="Pengecekan mesin absensi sidik jari" width="700" height="700" loading="lazy"><span>Mesin absensi</span></button>
+          <button class="ph" type="button" data-full="magang-dprd3.webp" aria-label="Perbesar foto: Ruang sidang"><img src="magang-dprd3-t.webp" alt="Di ruang sidang DPRD Kota Medan" width="700" height="700" loading="lazy"><span>Ruang sidang</span></button>
+        </div>
       </div>
     </div>
   </section>
@@ -602,6 +622,16 @@ cb.addEventListener('click',function(){
     if(lb&&lb.showModal){lbImg.src=img.src;lbImg.alt=img.alt;lb.showModal()}else{window.open(img.src,'_blank')}
   });
   if(lb)lb.addEventListener('click',function(){lb.close()});
+})();
+</script>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');if(!lb)return;
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.ph');if(!b)return;
+    lbImg.src=b.dataset.full;lbImg.alt=b.querySelector('img').alt;
+    if(lb.showModal)lb.showModal();else window.open(b.dataset.full,'_blank');
+  });
 })();
 </script>
 </body>
